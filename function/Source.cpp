@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -22,7 +22,7 @@ long long Power(long long x, long long y) {
 void main() {
 	setlocale(LC_ALL, "");
 	int x, y;
-	cout << "Ââåäèòå 2 ÷èñëà: "; cin >> x >> y;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2 Ñ‡Ð¸ÑÐ»Ð°: "; cin >> x >> y;
 	cout << "Factorial " << x << " " << Factorial(x) << endl;
 	cout << "Power " << Power(x, y);
 }
