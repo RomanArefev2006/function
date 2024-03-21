@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -22,21 +22,21 @@ int main() {
 	int minRand, maxRand, Left;
 
 	do {
-		cout << "Ââåäèòå ìèíèìàëüíîå ÷èñëî: "; cin >> minRand;
-		cout << "Ââåäèòå max ÷èñëî: "; cin >> maxRand;
-		if (minRand == maxRand) cout << "Ïðèäåëû äèàïàçîíà íå äîëæíû ñîâïàäàòü" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> minRand;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ max Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> maxRand;
+		if (minRand == maxRand) cout << "ÐŸÑ€Ð¸Ð´ÐµÐ»Ñ‹ Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ð° Ð½Ðµ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ ÑÐ¾Ð²Ð¿Ð°Ð´Ð°Ñ‚ÑŒ" << endl;
 	} while (minRand == maxRand);
 
 	FillRand(arr, n, minRand, maxRand);
 	Print(arr, n);
 
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << Sum(arr, n) << endl;
-	cout << "Ñðåäíåå àðåôìèòè÷åñêîå: " << Avg(arr, n) << endl;
-	cout << "Ìàêñèìàëüíûé ýëëåìåíò: " << maxValueIn(arr, n) << endl;
-	cout << "Ìèíèìàëüíûé ýëëåìåíò: " << minValueIn(arr, n) << endl;
-	cout << "Ìèíèìàëüíûé ýëëåìåíò: " << minValueIn(arr, n) << endl;
-	cout << "Ââåäèòå ÷èñëî äëÿ ñäâèãà: "; cin >> Left;
-	cout << "Ñäâèã â ëåâî: " << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << Sum(arr, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€ÐµÑ„Ð¼Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ: " << Avg(arr, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»Ð»ÐµÐ¼ÐµÐ½Ñ‚: " << maxValueIn(arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»Ð»ÐµÐ¼ÐµÐ½Ñ‚: " << minValueIn(arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»Ð»ÐµÐ¼ÐµÐ½Ñ‚: " << minValueIn(arr, n) << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð´Ð»Ñ ÑÐ´Ð²Ð¸Ð³Ð°: "; cin >> Left;
+	cout << "Ð¡Ð´Ð²Ð¸Ð³ Ð² Ð»ÐµÐ²Ð¾: " << endl;
 	shiftLeft(arr, n, Left);
 
 	return 0;
