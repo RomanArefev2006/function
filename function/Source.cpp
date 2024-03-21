@@ -23,6 +23,6 @@ void main() {
 	setlocale(LC_ALL, "");
 	int x, y;
 	cout << "Введите 2 числа: "; cin >> x >> y;
-	cout << "Factorial " << x << " " << Factorial(x) << endl;
+	cout << "Factorial " << x << "        " << Factorial(x) << endl;
 	cout << "Power " << Power(x, y);
 }
