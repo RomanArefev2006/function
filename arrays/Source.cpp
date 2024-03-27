@@ -6,7 +6,7 @@ using namespace std;
 
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void Print(int arr[], const int n);
-int Sum(int arr[], const int n);
+int Sum(int arr[], const int n); 
 double Avg(int arr[], const int n);
 double minValueIn(int arr[], const int n);
 double maxValueIn(int arr[], const int n);
