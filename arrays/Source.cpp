@@ -5,12 +5,32 @@ using namespace std;
 #define tab "\t"
 
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(char arr[], const int n, int minRand = 0, int maxRand = 100);
+
 void Print(int arr[], const int n);
+void Print(double arr[], const int n);
+void Print(char arr[], const int n);
+
 int Sum(int arr[], const int n); 
+int Sum(double arr[], const int n);
+int Sum(char arr[], const int n);
+
 double Avg(int arr[], const int n);
+double Avg(double arr[], const int n);
+double Avg(char arr[], const int n);
+
 double minValueIn(int arr[], const int n);
+double minValueIn(double arr[], const int n);
+double minValueIn(char arr[], const int n);
+
 double maxValueIn(int arr[], const int n);
+double maxValueIn(double arr[], const int n);
+double maxValueIn(char arr[], const int n);
+
 void shiftLeft(int arr[], const int n, const int x);
+void shiftLeft(double arr[], const int n, const int x);
+void shiftLeft(char arr[], const int n, const int x);
 
 
 int main() {
@@ -52,6 +72,28 @@ void FillRand(int arr[], const int n, int minRand, int maxRand) {
 		arr[i] = minRand + rand() % (maxRand - minRand);
 	}
 }
+void FillRand(double arr[], const int n, int minRand, int maxRand) {
+	if (maxRand < minRand) {
+		int buffer = minRand;
+		minRand = maxRand;
+		maxRand = buffer;
+	}
+	for (int i = 0; i < n; i++) {
+		arr[i] = minRand + rand() % (maxRand - minRand);
+	}
+}
+void FillRand(char arr[], const int n, int minRand, int maxRand) {
+	if (maxRand < minRand) {
+		int buffer = minRand;
+		minRand = maxRand;
+		maxRand = buffer;
+	}
+	for (int i = 0; i < n; i++) {
+		arr[i] = minRand + rand() % (maxRand - minRand);
+	}
+}
+
+
 
 void Print(int arr[], const int n) {
 
@@ -61,6 +103,24 @@ void Print(int arr[], const int n) {
 
 	cout << endl;
 }
+void Print(double arr[], const int n) {
+
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << tab;
+	}
+
+	cout << endl;
+}
+void Print(char arr[], const int n) {
+
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << tab;
+	}
+
+	cout << endl;
+}
+
+
 
 int Sum(int arr[], const int n) {
 	int sum = 0;
@@ -71,12 +131,67 @@ int Sum(int arr[], const int n) {
 
 	return sum;
 }
+int Sum(double arr[], const int n) {
+	int sum = 0;
+
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+	}
+
+	return sum;
+}
+int Sum(char arr[], const int n) {
+	int sum = 0;
+
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+	}
+
+	return sum;
+}
+
+
+
 
 double Avg(int arr[], const int n) {
 	return (double)Sum(arr, n) / n;
 }
+double Avg(double arr[], const int n) {
+	return (double)Sum(arr, n) / n;
+}
+double Avg(char arr[], const int n) {
+	return (double)Sum(arr, n) / n;
+}
+
+
 
 double maxValueIn(int arr[], const int n) {
+
+	int max = arr[0];
+
+	for (int i = 0; i < n; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
+	}
+
+	return max;
+
+}
+double maxValueIn(double arr[], const int n) {
+
+	int max = arr[0];
+
+	for (int i = 0; i < n; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
+	}
+
+	return max;
+
+}
+double maxValueIn(char arr[], const int n) {
 
 	int max = arr[0];
 
@@ -100,8 +215,63 @@ double minValueIn(int arr[], const int n) {
 	}
 	return min;
 }
+double minValueIn(double arr[], const int n) {
+	int min = arr[0];
+	for (int i = 0; i < n; i++) {
+		if (arr[i] < min) {
+			min = arr[i];
+		}
+	}
+	return min;
+}
+double minValueIn(char arr[], const int n) {
+	int min = arr[0];
+	for (int i = 0; i < n; i++) {
+		if (arr[i] < min) {
+			min = arr[i];
+		}
+	}
+	return min;
+}
+
+
+
 
 void shiftLeft(int arr[], const int n, const int x) {
+
+	int num;
+
+	for (int i = 0; i < x; i++) {
+		num = arr[0];
+		for (int j = 0; j < n - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
+		arr[n - 1] = num;
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "\t" << arr[i];
+	}
+
+}
+void shiftLeft(double arr[], const int n, const int x) {
+
+	int num;
+
+	for (int i = 0; i < x; i++) {
+		num = arr[0];
+		for (int j = 0; j < n - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
+		arr[n - 1] = num;
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "\t" << arr[i];
+	}
+
+}
+void shiftLeft(char arr[], const int n, const int x) {
 
 	int num;
 
