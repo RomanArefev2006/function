@@ -41,12 +41,14 @@ void shiftLeft(double arr[], const int n, const int x);
 void shiftLeft(char arr[], const int n, const int x);
 //void shiftLeft(int arr[][n], const int n, const int x);
 
+void sort(int arr[], const int n);
+
 
 int main() {
 	setlocale(LC_ALL, "");
 
 	const int n = 5;
-	int arr[n][n];
+	int arr[n];
 
 	int minRand, maxRand, Left;
 
@@ -56,17 +58,21 @@ int main() {
 		if (minRand == maxRand) cout << "Приделы диапазона не должны совпадать" << endl;
 	} while (minRand == maxRand);
 
-	FillRand(arr, n, n, minRand, maxRand);
-	Print(arr, n, n);
+	FillRand(arr, n, minRand, maxRand);
+	Print(arr, n);
 
-	cout << "Сумма элементов массива: " << Sum(arr, n, n) << endl;
-	cout << "Среднее арефмитическое: " << Avg(arr, n, n) << endl;
-	cout << "Максимальный эллемент: " << maxValueIn(arr, n, n) << endl;
-	cout << "Минимальный эллемент: " << minValueIn(arr, n, n) << endl;
-	cout << "Минимальный эллемент: " << minValueIn(arr, n, n) << endl;
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	cout << "Среднее арефмитическое: " << Avg(arr, n) << endl;
+	cout << "Максимальный эллемент: " << maxValueIn(arr, n) << endl;
+	cout << "Минимальный эллемент: " << minValueIn(arr, n) << endl;
+	cout << "Минимальный эллемент: " << minValueIn(arr, n) << endl;
 	cout << "Введите число для сдвига: "; cin >> Left;
 	cout << "Сдвиг в лево: " << endl;
-	//shiftLeft(arr, n, Left);
+	shiftLeft(arr, n, Left);
+	cout << "sort: ";
+
+	sort(arr, n);
+
 
 	return 0;
 }
@@ -322,7 +328,7 @@ void shiftLeft(int arr[], const int n, const int x) {
 	for (int i = 0; i < n; i++) {
 		cout << "\t" << arr[i];
 	}
-
+	cout << endl;
 }
 void shiftLeft(double arr[], const int n, const int x) {
 
@@ -357,4 +363,23 @@ void shiftLeft(char arr[], const int n, const int x) {
 		cout << "\t" << arr[i];
 	}
 
+}
+
+void sort(int arr[], const int n) {
+	int buffer;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				buffer = arr[j]; // создали дополнительную переменную
+				arr[j] = arr[j + 1]; // меняем местами
+				arr[j + 1] = buffer; // значения элементов
+			}
+		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << tab;
+	}
+
+	cout << endl;
 }
