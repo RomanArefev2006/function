@@ -11,13 +11,14 @@ double Avg(int arr[], const int n);
 double minValueIn(int arr[], const int n);
 double maxValueIn(int arr[], const int n);
 void shiftLeft(int arr[], const int n, const int x);
+void Search(int arr[], const int n);
 
 
 int main() {
 	setlocale(LC_ALL, "");
 
-	const int n = 5;
-	int arr[n];
+	const int n = 7;
+	int arr[n] = {1, 2, 4, 1, 10, 10, 2};
 
 	int minRand, maxRand, Left;
 
@@ -27,7 +28,7 @@ int main() {
 		if (minRand == maxRand) cout << "Приделы диапазона не должны совпадать" << endl;
 	} while (minRand == maxRand);
 
-	FillRand(arr, n, minRand, maxRand);
+	//FillRand(arr, n, minRand, maxRand);
 	Print(arr, n);
 
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
@@ -38,6 +39,8 @@ int main() {
 	cout << "Введите число для сдвига: "; cin >> Left;
 	cout << "Сдвиг в лево: " << endl;
 	shiftLeft(arr, n, Left);
+
+	Search(arr, n);
 
 	return 0;
 }
@@ -116,5 +119,21 @@ void shiftLeft(int arr[], const int n, const int x) {
 	for (int i = 0; i < n; i++) {
 		cout << "\t" << arr[i];
 	}
+	cout << endl;
+}
 
+void Search(int arr[], const int n) {
+	int count = 0; 
+	int buffer = 0; 
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (arr[i] == arr[j] && i != j) {
+				count++;
+				//cout << arr[i] << "\t";
+				buffer = arr[i];
+			}
+		}
+		cout << "Числа: " << buffer << "\t" << endl;
+	}
+	cout << "Повторения: " << count << endl;
 }
